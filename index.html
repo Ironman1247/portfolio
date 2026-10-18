@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CRITICAL FOR MOBILE: Sets up responsive screen scaling -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
   <title>My Portfolio</title>
   <style>
     
@@ -13,12 +16,11 @@
     }
 
     body {
-      background-color:whitesmoke
+      background-color: whitesmoke;
     }
 
-    
     .navbar {
-      background-color:royalblue;
+      background-color: royalblue;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -28,15 +30,13 @@
       z-index: 1000;
     }
 
-    
     .portfolio {
-      color:black;
+      color: black;
       font-size: 20px;
       font-weight: bold;
       text-decoration: none;
     }
 
-    
     .nav-links {
       list-style: none;
       display: flex;
@@ -44,118 +44,152 @@
     }
 
     .nav-links li a {
-      color:black;
+      color: black;
       text-decoration: none;
       font-size: 16px;
       padding: 8px 12px;
       border-radius: 4px;
-     
     }
 
-    
     .nav-links li a:hover {
       background-color: #00bcd4;
       color: #111;
     }
     
-  .knowmore {
-            display:inline-flex;
-            margin-top: 20px;
-            padding: 10px 24px;
-            background-color: #2563eb;
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-        }
+    .knowmore {
+      display: inline-flex;
+      margin-top: 20px;
+      padding: 10px 24px;
+      background-color: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
 
-  .knowmore:hover{
-    background-color:crimson ;
-          
-  }
-  .profile-photo {
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid white;
+    .knowmore:hover {
+      background-color: crimson;
+    }
+
+    .profile-photo {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      max-width: 100%; /* Prevents the image from overflowing layout */
+    }
+
+    .home {
+      text-align: center;
+      padding: 100px 20px;
+      background: rgb(144, 201, 201);
+    }
+
+    .home h1 {
+      font-size: 40px;
+      color: #172554;
+    }
+
+    .home h3 {
+      color: #eb5422;
+      margin: 10px 0;
+    }
+
+    .section {
+      padding: 55px 20px; /* Reduced side padding slightly for better screen utility */
+      text-align: center;
+    }
+
+    .section h2 {
+      color: #172554;
+      font-size: 30px;
+      margin-bottom: 20px;
+    }
+
+    .section p {
+      max-width: 800px;
+      margin: 10px auto;
+      line-height: 1.5;
+    }
+
+    .card {
+      background-color: rgb(28, 80, 144);
+      padding: 25px;
+      margin: 15px auto;
+      max-width: 600px;
+      border-radius: 16px; /* Optimized border-radius to prevent distortion on mobile */
+      box-shadow: 0 13px 13px rgba(0, 0, 0, 0.08);
+      color: white;
+      width: 100%; /* Ensures cards fill available container space cleanly */
+    }
+
+    .card h3 {
+      color: #19d1a6;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .skills-container {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      color: white;
+      font-weight: bold;
+      flex-wrap: wrap; /* Allows skill cards to drop into rows on mobile screens */
+    }
     
-    
-}
-
-  .home{
-         text-align: center;
-         padding: 100px 20px;
-         background:rgb(144, 201, 201);
-        }
-
-  .home h1 {
-            font-size: 40px;
-            color: #172554;
-        }
-
-        .home h3 {
-            color: #eb5422;
-            margin: 10px 0;
-        }
-
-  .section {
-            padding: 55px ;
-            text-align: center;
-        }
-        .section h2 {
-            color: #172554;
-            font-size: 30px;
-            margin-bottom: 20px;
-            
-        }
-        .section p {
-            max-width: 800px;
-            margin: 10px auto;
-        }
-         .card {
-            background-color: rgb(28, 80, 144);
-            padding: 25px;
-            margin: 15px auto;
-            max-width: 600px;
-            border-radius: 100px;
-            box-shadow: 0 13px 13px rgba(0, 0, 0, 0.08);
-            color:white;
-
-           
-        }
-        .card h3 {
-            color: #19d1a6;
-            margin-bottom: 10px;
-            font-weight:bold;
-
-        }
-        .skills-container {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            color:white;
-            font-weight: bold;
-        }
+    /* Individual size adjustment for smaller text chunks inside the skills flow */
+    .skills-container .card {
+      margin: 5px;
+      max-width: 280px; 
+    }
         
-      .contact {
-            background-color: #dbeafe;
-            padding: 55px ;
-            text-align: center;
-        }
+    .contact {
+      background-color: #dbeafe;
+      padding: 55px 20px;
+      text-align: center;
+    }
         
-        footer {
-            text-align: center;
-            background-color: #172554;
-            color: white;
-            padding: 18px;
-        }
+    footer {
+      text-align: center;
+      background-color: #172554;
+      color: white;
+      padding: 18px;
+    }
 
+    /* ========================================== */
+    /* RESPONSIVE CSS MEDIA QUERY FOR MOBILE SIZES */
+    /* ========================================== */
+    @media screen and (max-width: 768px) {
+      .navbar {
+        flex-direction: column; /* Stacks logo over links on small phones */
+        gap: 15px;
+        padding: 20px;
+      }
 
-   
+      .nav-links {
+        flex-wrap: wrap; /* Allows menu options to wrap cleanly */
+        justify-content: center;
+        gap: 10px;
+      }
+
+      .nav-links li a {
+        font-size: 14px; /* Slightly downsized links for touch interface space */
+        padding: 6px 10px;
+      }
+
+      .home h1 {
+        font-size: 28px; /* Balanced heading size for small displays */
+      }
+
+      .section h2 {
+        font-size: 24px;
+      }
+    }
   </style>
 </head>
 <body>
-
+   
   <!-- Navigation Bar -->
   <nav class="navbar">
     <a href="#home" class="portfolio">MyPortfolio</a>
@@ -169,107 +203,94 @@
     </ul>
   </nav>
 
-  
+  <!-- Home Section -->
+  <section id="home" class="home">
+    <h1>Hello, I'm Aryan Potphode!</h1>
+    <h3>A Student and Aspiring Web Developer</h3>
+    <p>Welcome to my personal portfolio website.</p>
+    <a href="#about" class="knowmore">Know More</a>
+  </section>
 
-    
-    <section id="home" class="home">
-        <h1>Hello, I'm Aryan Potphode!</h1>
-        <h3>A Student and Aspiring Web Developer</h3>
-        <p>Welcome to my personal portfolio website.</p>
-        <a href="#about" class="knowmore">Know More</a>
-    </section>
+  <!-- About Me Section -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>
+      I am a Aryan Potphode, a student interested in technology, programming,
+      and web development. I enjoy learning new skills,
+      solving problems, and creating innovative projects.
+      My goal is to become a skilled professional in the
+      field of technology. I am looking forward to learn and develop various technical and social skills in my four year college journey.
+    </p>
+    <br>
+    <img src="myphoto.png" alt="My Profile Photo" class="profile-photo">
+  </section>
 
-    
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>
-            I am a Aryan Potphode, a student interested in technology, programming,
-            and web development. I enjoy learning new skills,
-            solving problems, and creating innovative projects.
-            My goal is to become a skilled professional in the
-            field of technology.I am looking forward to learn and develop various technical and social skills in my four year college journey.
-        </p>
-         <img src="myphoto.png"
-         alt="My Profile Photo"
-         class="profile-photo">
+  <!-- Education Section -->
+  <section id="education" class="section">
+    <h2>Education</h2>
+    <div class="card">
+      <h3>Class 10th</h3>
+      <p>School Name: Podar International School Chinchwad</p>
+      <p>Score: 94.4%</p>
+    </div>
+    <div class="card">
+      <h3>Class 12th</h3>
+      <p>School Name: Challenger Public School Pimple Saudagar</p>
+      <p>Score: 83%</p>
+    </div>
+    <div class="card">
+      <h3>B.Tech in Computer Engineering</h3>
+      <p>Pimpri Chinchwad College Of Engineering Akurdi</p>
+      <p>First Year (Div: K)</p>
+    </div>
+  </section>
 
-    </section>
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h2>Technical Skills</h2>
+    <p><b>I am at the beginning of my technical journey.<br>
+      So, I am still learning and developing my technical skills.<br>
+      Some of the skills which I am currently learning are:
+    </b></p>
+    <br>
+    <div class="skills-container">
+      <div class="card">HTML5</div>
+      <div class="card">Python</div>
+      <div class="card">JavaScript</div>
+      <div class="card">GitHub and VS Code</div>
+    </div>
+  </section>
 
-    
-    <section id="education" class="section">
-        <h2>Education</h2>
-        <div class="card">
-            
-            <h3>Class 10th</h3>
-            <p>School Name: Podar International School Chinchwad</p>
-            <p>Score: 94.4%</p>
-            </div>
-            <div class="card"><h3>Class 12th</h3>
-            <p>School Name: Challenger Public School Pimple Saudagar</p>
-            <p>Score:83%</p>
-            </div>
-            <div class="card">
-            <h3>B.Tech in Computer Engineering</h3>
-            <p>Pimpri Chinchwad College Of Engineering Akurdi</p>
-            <p>First Year (Div: K)</p>
-        </div>
-    </section>
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2>My Projects</h2>
+    <div class="card">
+      <h3>1. Personal Portfolio Website</h3>
+      <p>A personal website created using HTML5 and CSS3 to display my information and skills.</p>
+    </div>
+    <div class="card">
+      <h3>2. Google Dinosaur Game</h3>
+      <p>A project replicating the Google Dinosaur game.</p>
+    </div>
+    <div class="card">
+      <h3>3. Various Games and projects</h3>
+      <p>Some projects and games created while learning JavaScript.</p>
+    </div>
+  </section>
 
-    
-    <section id="skills" class="section">
-        <h2>Technical Skills</h2>
-        <p><b>I am at the beginning of my technincal journey.
-          <br>
-          So, I am still learning and developing my technical skills.
-          <br>
-          Some of the skills which I am currently learning are:
-        </b></p>
-        <div class="skills-container">
-          
-            <div class="card">HTML5</div>
-            <div class="card">Python</div>
-            <div class="card">Javascript</div>
-            <div class="card">Github and VS Code</div>
-            
-        </div>
-        
-    </section>
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <h2>Contact Information</h2>
+    <p>Email: aryan.potphode26@pccoepune.org</p>
+    <p>Phone: +917057738740</p>
+    <p>Location: Pune, India</p>
+  </section>
 
-    
-    <section id="projects" class="section">
-        <h2>My Projects</h2>
-
-        <div class="card">
-            <h3>1. Personal Portfolio Website</h3>
-            <p>A personal website created using HTML5 and CSS3
-               to display my information and skills.</p>
-        </div>
-
-        
-
-        <div class="card">
-            <h3>2. Google Dinosaur Game</h3>
-            <p>A project replicating the Google Dinosaur game.</p>
-        </div>
-
-         <div class="card">
-            <h3>3. Various Games and projects</h3>
-            <p>Some projects and games created while 
-               learing javascript.</p>
-        </div>
-    </section>
-
-    
-    <section id="contact" class="contact">
-        <h2>Contact Information</h2>
-        <p>Email: aryan.potphode26@pccoepune.org</p>
-        <p>Phone: +917057738740</p>
-        <p>Location: Pune, India</p>
-    </section>
-    <footer>
-        <p>Thanks for Visting!</p>
-        <p>Created in: 2026</p>
-    </footer>
+  <!-- Footer -->
+  <footer>
+    <p>Thanks for Visiting!</p>
+    <p>Created in: 2026</p>
+  </footer>
 
 </body>
 </html>
